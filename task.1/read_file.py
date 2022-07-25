@@ -16,11 +16,3 @@ def read_json_file(file_name):
     """
     data = json.load(open(file_name))
     return data
-
-
-def create_dataframe(data, columns):
-    """
-    Creates a dataframe from a dictionary
-    """
-    dataframe = pd.DataFrame(data, columns=columns)
-    return dataframe
