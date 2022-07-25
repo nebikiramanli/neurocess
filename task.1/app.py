@@ -1,6 +1,4 @@
-from pyparsing import col
 import read_file
-import json
 import os 
 import visualization
 import pandas as pd
@@ -41,6 +39,7 @@ def main():
     del grouped_data["0.0"]
     
     data = pd.DataFrame({'Name': grouped_data.index, 'Count': grouped_data.values})
+    print("Task Grouped Data Count\n", data)
     figure = visualization.get_bar_plot(data, "Name", "Count", "Task Count", fig_size=(10,6), x_rotation=90)
     visualization.save_figure(figure, os.path.join(PROJECT_DIR, 'figure'), "task_count.png")
 
